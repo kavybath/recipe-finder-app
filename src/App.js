@@ -6,6 +6,8 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogContent from '@material-ui/core/DialogContent';
 import DialogActions from '@material-ui/core/DialogActions';
 import Header from './components/header';
+import search from './images/search-icon.svg';
+import soup from './images/soup.svg';
 import { RecipeContainer,CoverImage, RecipeName, IngredientsText, SeeMoreText } from './components/recipe';
 
 const APP_ID = "a3da4773";
@@ -91,9 +93,9 @@ function App() {
     <Container>
       <Header.Header> 
         <Header.AppNameComponent>
-          <Header.AppIcon src="/soup.svg"/> Find Recipes </Header.AppNameComponent >
+          <Header.AppIcon src={soup}/> Find Recipes </Header.AppNameComponent >
         <Header.SearchComponent>
-          <Header.SearchIcon src="/search-icon.svg" />
+          <Header.SearchIcon src={search} />
           <Header.SearchInput placeholder='Search Here' onChange={onSearchTextChange}/> 
         </Header.SearchComponent>
         </Header.Header>
@@ -102,7 +104,7 @@ function App() {
             ( recipeList.map((recipeObj) => (
             <RecipeComponent recipeObj={recipeObj.recipe} />
             )) ) : ( 
-            <Placeholder src="/soup.svg" /> 
+            <Placeholder src={soup}/> 
           )}
         </RecipeListContainer>
         
